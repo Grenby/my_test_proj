@@ -1,0 +1,25 @@
+def versions = [:]
+versions.gdx = '1.9.11'
+versions.junit = '5.10.0'
+versions.mockito = '5.5.0'
+versions.lombok = '1.18.26'
+
+def deps = [:]
+
+def gdx = [:]
+gdx.gdx = "com.badlogicgames.gdx:gdx:$versions.gdx"
+gdx.backend_lwjgl3 = "com.badlogicgames.gdx:gdx-backend-lwjgl3:$versions.gdx"
+gdx.platform_desktop = "com.badlogicgames.gdx:gdx-platform:$versions.gdx:natives-desktop"
+deps.gdx = gdx
+
+def junit = [:]
+junit.api = "org.junit.jupiter:junit-jupiter:$versions.junit"
+junit.engine = "org.junit.jupiter:junit-jupiter-engine:$versions.junit"
+
+deps.mockito = "org.mockito:mockito-core:$versions.mockito"
+deps.mockito_junit_jupiter = "org.mockito:mockito-junit-jupiter:$versions.mockito"
+deps.junit = junit
+
+deps.lombok = "org.projectlombok:lombok:$versions.lombok"
+
+ext.deps = deps
